@@ -11,12 +11,11 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-
-@Entity
-@Table(name="book")
 @Data
 @Getter
 @Setter
+@Entity
+@Table(name="books")
 public class Book {
     
     @Id
