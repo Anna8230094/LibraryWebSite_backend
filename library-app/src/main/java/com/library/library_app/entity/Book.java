@@ -17,17 +17,19 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     private String title;
+    @Column
     private String author;
     @Column(columnDefinition = "TEXT")
     private String description;
-    private String copies;
-
+    @Column
+    private int copies;
     @Column(name = "copies_available")
-    private String copiesAvailable;
-
+    private int copiesAvailable;
+    @Column
     private String category;
-
     @Column(columnDefinition = "TEXT")
     private String img;
+
 }
