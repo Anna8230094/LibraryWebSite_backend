@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LibraryAppApplication",
+            "request": "launch",
+            "mainClass": "com.library.library_app.LibraryAppApplication",
+            "projectName": "library-app"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
