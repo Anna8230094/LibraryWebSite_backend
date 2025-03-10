@@ -11,11 +11,12 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    http.authorizeHttpRequests(
-        authorizeRequests -> authorizeRequests.requestMatchers("/swagger-ui/**")
-            .permitAll()
-            .requestMatchers("/v3/api-docs*/**")
-            .permitAll());
+    http
+        .authorizeHttpRequests(authorizeRequests -> authorizeRequests
+            .requestMatchers("/swagger-ui/**", "/v3/api-docs*/**").permitAll() // Allow Swagger UI
+            .requestMatchers("/**").permitAll() // Allow read-only access to API
+        )
+        .csrf(csrf -> csrf.disable()); // Disable CSRF for REST API
 
     return http.build();
   }
